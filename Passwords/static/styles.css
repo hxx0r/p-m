@@ -1,0 +1,311 @@
+
+@font-face{
+    font-family: 'Undertale';
+    
+    src: url('fonts/undertale_battle_font.woff2') format('woff2'); 
+
+    font-style: normal; 
+    font-weight: normal;
+    font-display: swap;
+}
+
+
+.o{
+    color: white;
+    background-color: #fff;
+}
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+.blue
+{
+    color: #242424;
+}
+.white
+{
+    color: #ffffff;
+}
+.dark_green
+{
+    color: #252525;
+}
+
+
+/* класс называется green потому что изначально некоторые объекты были зелеными, но вскоре я поменяла цвет, но менять классы у эл-тов менять не стала */
+.green 
+{
+    color: yellow;
+}
+
+
+.navbar
+{
+    background-color: #3a3a3a;
+
+    background-image: linear-gradient(to right, #282828, #1f1f1f);
+    color: #ffffff;
+}
+
+
+body {
+    background-color: #000000;
+    font-family: 'Undertale', sans-serif;
+    color: #ffffff;
+}
+
+.tablebody
+{
+    padding: 0.5cm;
+    outline: none;
+    margin: auto;
+}
+
+.history:hover
+{
+    background-color: #001816;
+}
+
+.padding
+{
+    padding: 0.5cm;
+}
+
+.verticalalign
+{
+    vertical-align: middle;
+}
+
+#dropdownMenuButton1
+{
+    background-color: rgb(4, 74, 66, 0);
+    color: #ffffff;
+    font-size: 20px;
+}
+
+#dropdownMenuButton1:hover
+{
+    background-color: #373737;
+}
+
+.dropdown-menu
+{
+    background-color: #E5F3F1;
+}
+
+.dropdown-item:hover
+{
+    background-color: #f7f7f7;
+}
+
+#note
+{
+    border-radius: 15px;
+}
+
+/* та же ситуация, что и классом green */
+.green_bg 
+{
+    background-color: #fefefe;
+}
+
+
+.forms
+{
+    border-radius: 7px;
+    border-style: solid;
+    border-width: medium;
+    border-color: #001816;
+    padding: 5px;
+    width: 7cm;
+}
+
+.forms:hover
+{
+    border-style: solid;
+    border-width: medium;
+    border-color: rgb(255, 255, 138);
+}
+
+#note
+{
+    width: auto;
+}
+
+
+.green_button
+{
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: auto;
+    margin: 5px;
+}
+
+.green_button:hover
+{
+    background-color: yellow;
+}
+
+
+.mynavigation
+{
+    list-style-type: none;
+    margin: 0;
+    padding-top: 3cm;
+    padding-left: 0%;
+    width: 15%;
+    background-color: rgba(37, 37, 37, 0.38);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.mynavigationlist a
+{
+    display: block;
+
+    padding: 20px 16px;
+    text-decoration: none;
+}
+
+.hovering:hover
+{
+    background-color: #001816;
+    color: white;
+}
+
+.mynavigationlist.a:active
+{
+    background-color: #353535;
+    color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+.disabled-link {
+    pointer-events: none;
+}
+
+.top_border {
+    border-top-style: solid;
+    border-width: 2px;
+    border-color: #1c1c1c;
+}
+
+.whitetext {
+    color: white;
+}
+
+.column1 {
+    width: 85%;
+    float: right;
+    padding-top: 3cm;
+    padding-bottom: 3cm;
+}
+
+.center {
+    clear: both;
+    width: 85%;
+    float: right;
+}
+
+.topbottompadding {
+    padding-top: 3cm;
+    padding-bottom: 3cm;
+}
+
+.justfloatright {
+    float: right;
+    margin: auto;
+}
+
+.justfloatleft {
+    float: left;
+    margin: auto;
+}
+
+.clearfloat {
+    clear: both;
+}
+
+.staticposition {
+    position: static;
+
+}
+
+
+.displaycomment {
+    background-color: rgba(31, 31, 31, 0.5);
+    width: 25%;
+    margin: auto;
+    padding: 0.3cm;
+    color: white;
+    border-radius: 10px;
+}
+
+
+.displayprofile {
+    background-color: rgb(23, 23, 23);
+    width: 45%;
+    margin: auto;
+    padding: 0.3cm;
+    color: white;
+    border-radius: 10px;
+}
+
+
+#error {
+    opacity: 0.7;
+}
+
+
+.alert {
+    margin-top: 3cm;
+    position: fixed;
+    display: block;
+    width: 100%;
+}
+
+.head1 {
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+.head2 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.head3 {
+    position: absolute;
+    bottom: -35px;
+    left: 30px;
+    font-size: 160px;
+    text-transform: uppercase;
+    color: rgb(104, 101, 101);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+
+
+.bottom span+span {
+    margin-left: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

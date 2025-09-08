@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        
+        <script crossorigin="ф" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+        <link crossorigin="ф" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        
+        <link href="/static/heart.png" rel="icon">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+
+        <title>{% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-md navigationBar fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <span class="green"><img src="/static/heart.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-middle">
+                    Менеджер паролей</span>
+                </a>
+                <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbar">
+                    {% if session["user_id"] %}
+                        <ul class="navbar-nav me-auto mt-2 ">
+                            <li class="nav-item ">
+                                <div class="btn-group dropdown padding ">
+                                    <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        ПАРОЛИ
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="/addpassword">Добавить пароль</a></li>
+                                        <li><a class="dropdown-item" href="/viewpasswords">Посмотреть пароли</a></li>
+                                        <li><a class="dropdown-item" href="/weakpasswords">Посмотреть слабые пароли</a></li>
+                                        <li><a class="dropdown-item" href="/generate_password">Сгенерировать пароль</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                           
+
+                        </ul>
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item">
+                                <div class="btn-group dropstart padding">
+                                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{ session["user_id"] }}
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="/profile">Профиль</a></li>
+                                    <li><a class="dropdown-item" href="/account">Aккаунт</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="/logout"><b>Выйти</b></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    {% else %}
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item padding"><a class="nav-link white" id="dropdownMenuButton1" href="/register">Регистрация</a></li>
+                            <li class="nav-item padding"><a class="nav-link white" id="dropdownMenuButton1" href="/login">Вход</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+
+        {% if session["user_id"] %}
+            <ul class="mynavigation">
+                <li class="mynavigationlist"><a class="hovering whitetext" href="/">Домашняя страница</a></li>
+                <li class="mynavigationlist top_border"><a class="disabled-link green" href="/addpassword"><b>ПАРОЛИ</b></a></li>
+                <li class="mynavigationlist"><a class="hovering whitetext" href="/addpassword">Добавить пароль</a></li>
+                <li class="mynavigationlist"><a class="hovering whitetext" href="/viewpasswords">Посмотреть пароли</a></li>
+                <li class="mynavigationlist"><a class="hovering whitetext" href="/weakpasswords">Посмотреть слабые пароли</a></li>
+                <li class="mynavigationlist"><a class="hovering whitetext" href="/generate_password">Сгенерировать пароль</a></li>
+    
+            </ul>
+        {% endif %}
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert green_bg dark_green mb-0 text-center" role="alert">
+                    <b>{{ get_flashed_messages() | join(" ") }}</b>
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="container-fluid py-5 text-center">
+            {% block main %}{% endblock %}
+        </main>
+
+       
+    </body>
+
+</html>

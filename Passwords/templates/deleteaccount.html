@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Удалить аккаунт.
+{% endblock %}
+
+{% block main %}
+<div class="column1">
+    {% if session["user_id"] %}
+        <h1>Пока, {{ session["first_name"] }}</h1><br><br>
+
+        <div><h2>Если вы удалите аккаунт, то</h2></div>
+        <div><h6>
+           Вы потеряете все свои сохраненные данные<br>
+        </h6></div><br>
+
+
+        <form action="/deleteaccount" method="post">
+
+            <h4>Введите пароль для подтверждения действия</h4>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" name="password" placeholder="Введите пароль" type="password" required>
+            </div>
+            <button class="btn btn-primary" type="submit">Удалить аккаунт..</button>
+            <img src="/static/error.png" alt="Sorry"  width="50" height="50">
+        </form><br>
+    {% else %}
+    <h4>Аккаунт удален!..</h4>
+    <h6>Пока!..</h6>
+    <img src="/static/error.png" alt="Sorry"  width="50" height="50">
+    {% endif %}
+</div>
+{% endblock %}

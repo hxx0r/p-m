@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Главная
+{% endblock %}
+
+{% block main %}
+    <div class="column1">
+        <h1>Добро пожаловать, {{ session["first_name"] }}</h1><br><br>
+        <div class="displayprofile">
+            <h4><table class="tablebody" style="width:80%">
+                <tr align="left" class="history">
+                    <td class="tablebody ">Паролей сохранено:</td>
+                    <td style="width:10%">{{ passwords_data }}</td>
+                </tr class="history">
+        </div>
+    </div>
+{% endblock %}
